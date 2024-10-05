@@ -1,0 +1,69 @@
+/* Login.css */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #ffffff 30%, #a3d4ff 70%, #00c6ff 100%); /* Adjusted gradient */
+    text-align: center;
+    color: #ffffff; /* Changed to solid white for better contrast */
+}
+
+.login-content {
+    color: #ffffff; /* Changed text to white */
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+h1 {
+    font-size: 6.6rem; /* Larger, more enticing welcome message */
+    margin-bottom: 20px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 700; /* Bolder text for better readability */
+    color: #1064a8; /* Solid white to improve contrast */
+}
+
+p {
+    font-size: 1.5rem; /* Slightly larger text */
+    margin-bottom: 40px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #1064a8; /* Lighter color for the paragraph */
+}
+
+.login-button {
+    margin-top: 30px;
+}
+
+.login-button button {
+    padding: 15px 40px; /* Larger button */
+    font-size: 1.2rem; /* Larger button text */
+    background: linear-gradient(45deg, #ffffff, #00c6ff); /* White to blue gradient */
+    border: none;
+    color: #0072ff;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.4s ease, transform 0.3s ease;
+}
+
+.login-button button:hover {
+    background: linear-gradient(45deg, #c6e4ff, #0072ff); /* Softer blue gradient on hover */
+    transform: translateY(-5px);
+}
+
+.login-button button:active {
+    transform: scale(0.98);
+}
