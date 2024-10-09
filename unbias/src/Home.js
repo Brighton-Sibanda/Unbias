@@ -1,38 +1,82 @@
 import React, { useState } from 'react';
 import './Home.css';
 
-function Home() {
-    const [preference, setPreference] = useState('factual'); // Default setting
-    const [profession, setProfession] = useState('');
+export default function Home() {
+  const [perspective, setPerspective] = useState('factual');
+  const [profession, setProfession] = useState('');
 
-    const handleSubmit = () => {
-        console.log('Preference:', preference);
-        console.log('Profession:', profession);
-        // TODO: Deal with logic later.
-    };
+  const handleProceed = () => {
+    console.log('Proceeding with:', { perspective, profession });
+    // Add your navigation logic here
+  };
 
-    return (
-        <div className="home-wrapper">
-            <h1>Welcome to Unbias</h1>
-            <p>Select your preferred perspective:</p>
-            <div className="toggle-buttons">
-                <button onClick={() => setPreference('optimistic')} className={preference === 'optimistic' ? 'active' : ''}>Optimistic</button>
-                <button onClick={() => setPreference('factual')} className={preference === 'factual' ? 'active' : ''}>Factual</button>
-                <button onClick={() => setPreference('pessimistic')} className={preference === 'pessimistic' ? 'active' : ''}>Pessimistic</button>
-            </div>
-            <input
-                type="text"
-                placeholder="Enter your profession"
-                value={profession}
-                onChange={(e) => setProfession(e.target.value)}
-                className="profession-input"
-            />
-            <div className="home-button">
-                <button onClick={handleSubmit}>Proceed</button>
-                <button onClick={handleSubmit}>Skip</button>
-            </div>
+  const handleSkip = () => {
+    console.log('Skipping preferences');
+    // Add your skip navigation logic here
+  };
+
+  return (
+    <div className="home-wrapper">
+      <div className="home-content">
+        <h1>Unbias</h1>
+        <p>Get advice from multiple perspectives</p>
+        
+        <div className="preference-section">
+          <label className="text-lg font-semibold mb-2">Choose your perspective:</label>
+          <div className="radio-group">
+            <label>
+              <input
+                type="radio"
+                value="optimistic"
+                checked={perspective === 'optimistic'}
+                onChange={() => setPerspective('optimistic')}
+              />
+              Optimistic
+            </label>
+            <label>
+              <input
+                type="radio"
+                value="factual"
+                checked={perspective === 'factual'}
+                onChange={() => setPerspective('factual')}
+              />
+              Factual
+            </label>
+            <label>
+              <input
+                type="radio"
+                value="pessimistic"
+                checked={perspective === 'pessimistic'}
+                onChange={() => setPerspective('pessimistic')}
+              />
+              Pessimistic
+            </label>
+          </div>
         </div>
-    );
-}
 
-export default Home;
+        <div className="profession-section">
+          <label htmlFor="profession" className="text-lg font-semibold mb-2">Your profession:</label>
+          <input 
+            type="text" 
+            id="profession" 
+            placeholder="Enter your profession" 
+            value={profession}
+            onChange={(e) => setProfession(e.target.value)}
+            className="profession-input"
+          />
+        </div>
+
+        <div className="action-buttons">
+          <button onClick={handleProceed} className="proceed-button">
+            Proceed
+            <span className="arrow-right">→</span>
+          </button>
+          <button onClick={handleSkip} className="skip-button">
+            Skip
+            <span className="skip-forward">⏭</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}

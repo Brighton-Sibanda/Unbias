@@ -1,7 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import MyNavbar from "./MyNavbar";
 import Home from './Home';
 import Login from './Login';
@@ -15,36 +14,30 @@ import './Login.css';
 const PUBLISHABLE_KEY = "pk_test_a2Vlbi1tYXJsaW4tMzQuY2xlcmsuYWNjb3VudHMuZGV2JA"
 
 if (!PUBLISHABLE_KEY) {
-  throw new Error("Missing Publishable Key")
+  throw new Error("Missing Publishable Key");
 }
 
 function App() {
   return (
     <div className="App">
       <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
-      <header>
-
-      {/* Display welcome page here when user clicks on Unbias.com */}
-      <SignedOut>  
         <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<Login />} />
-            </Routes>
-        </BrowserRouter>
-      </SignedOut>
+          <header>
+            <SignedOut>
+              <Login />
+            </SignedOut>
 
-      {/* The user will be taken to the main page after they sign-in */}
-      <SignedIn>
-        <UserButton />
-        <BrowserRouter>
-          <MyNavbar />
-          <Routes>
-            <Route path="/Home" element={<Home />} />
-          </Routes>
-          <MyFooter />
+            <SignedIn>
+              <UserButton />
+              <MyNavbar />
+              <Routes>
+                <Route path="/" element={<Navigate replace to="/home" />} />
+                <Route path="/home" element={<Home />} />
+              </Routes>
+              <MyFooter />
+            </SignedIn>
+          </header>
         </BrowserRouter>
-      </SignedIn>
-      </header>
       </ClerkProvider>
     </div>
   );
