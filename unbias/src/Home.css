@@ -1,0 +1,73 @@
+.home-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #ffffff 30%, #a3d4ff 70%, #00c6ff 100%);
+    color: #1064a8;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #1064a8;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #1064a8;
+}
+
+.toggle-buttons button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 1rem;
+    background: linear-gradient(45deg, #ffffff, #00c6ff);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    color: #0072ff;
+    transition: background 0.4s ease, transform 0.3s ease;
+}
+
+.toggle-buttons button:hover {
+    background: linear-gradient(45deg, #c6e4ff, #0072ff);
+    transform: translateY(-3px);
+}
+
+.toggle-buttons button.active {
+    background: linear-gradient(45deg, #0072ff, #ffffff);
+    color: #ffffff;
+}
+
+.profession-input {
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 80%;
+    border-radius: 20px;
+    border: 1px solid #0072ff;
+}
+
+.home-button button {
+    padding: 10px 40px;
+    font-size: 1.2rem;
+    background: linear-gradient(45deg, #ffffff, #00c6ff);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 10px;
+    color: #0072ff;
+    transition: background 0.4s, transform 0.3s;
+}
+
+.home-button button:hover {
+    background: linear-gradient(45deg, #c6e4ff, #0072ff);
+    transform: translateY(-5px);
+}
+
+.home-button button:active {
+    transform: scale(0.98);
+}
