@@ -7,12 +7,12 @@ export default function Home() {
 
   const handleProceed = () => {
     console.log('Proceeding with:', { perspective, profession });
-    // Add your navigation logic here
+    // TODO: Add navigation logic here
   };
 
   const handleSkip = () => {
     console.log('Skipping preferences');
-    // Add your skip navigation logic here
+    // TODO: Add skip logic here
   };
 
   return (
