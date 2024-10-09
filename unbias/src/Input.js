@@ -1,5 +1,5 @@
 import React from 'react';
-import './Input.css'; // We'll use CSS to style the layout
+import './Input.css';
 
 function Input() {
 	return (
@@ -10,10 +10,15 @@ function Input() {
 			</div>
 
 			<div className="main-content">
-				<textarea
-					className="problem-input"
-					placeholder="Enter your problem here"
-				/>
+				<div className="input-section">
+					<textarea
+						className="problem-input"
+						placeholder="Enter your problem here"
+					/>
+					<button className="submit-button">
+						Submit
+					</button>
+				</div>
 			</div>
 		</div>
 	);
